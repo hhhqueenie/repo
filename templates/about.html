@@ -1,0 +1,36 @@
+{% extends "base.html"%}
+
+{% block main %}
+
+<h1>{{ about_head1 }}</h1>
+<p>{{ about_p1 }}</p>
+
+<h2>{{ about_head2 }}</h2>
+
+<body>
+    <input type="button" onclick="on()" value="开灯">
+    <img id="myImage" border="0" src="{{ url_for('static', filename='off.gif') }}" style="text-align:center;">
+    <input type="button" onclick="off()" value="关灯">
+    <script>
+        function on(){
+            document.getElementById('myImage').src="{{ url_for('static', filename='on.gif') }}"
+        }
+
+        function off(){
+            document.getElementById('myImage').src="{{ url_for('static', filename='off.gif') }}"
+        }
+        
+        var b = true
+        setInterval(function(){if(b){
+            b = false;
+            on();
+        } else {
+            off();
+            b = true;
+        }}, 1000)
+
+    </script>
+</body>
+
+{% endblock main %}
+
