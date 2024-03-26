@@ -2,7 +2,7 @@
 
 {% block main %}
 <h1>测测你是谁</h1>
-<form action="/noteboard" method="POST">
+<form action="/" method="POST">
   {{ form.csrf_token() }}
   {{ form.str.label }}
   {{ form.str }}
