@@ -34,3 +34,7 @@ def about():
 #something that is like a main() in java
 if __name__ == "__main__":
     app.run(debug = True)
+
+#we need to switch to wsgi or something because （开发版本性能太差）
+"uwsgi is in charge of connecting socket and it is fast with dynamic code"
+"nginx is quick for static code"
