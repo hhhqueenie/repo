@@ -10,7 +10,8 @@ try:
     classifier = fasttext.load_model('data/classifier.model')
 except ValueError:
     classifier = train.fit('data/train_data.txt')
-
+    classifier.save_model('data/classifier.model')
+    
 def do(text):
     text = data_preprocess.text_predict(text)
     pred = classifier.predict(text, k = -1)
