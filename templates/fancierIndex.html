@@ -4,22 +4,24 @@
 <title>升级版文字测试界面</title>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"
+
+
 
 <!-- description -->
 <meta name="description" content="Login Form - Responsive Template">
 <!-- Bootstrap CSS -->
-<link rel="stylesheet" href="../static/css/bootstrap.min.css">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
 <!-- Material Design Icons CSS -->
-<link rel="stylesheet" href="../static/css/materialdesignicons.css">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/materialdesignicons.css') }}">
 <!-- Bootstrap Checkbox CSS->
 <link rel="stylesheet" href="../static/css/awesome-bootstrap-checkbox.css">
 <!-- Rippler CSS -->
-<link rel="stylesheet" href="../static/css/rippler.min.css">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/rippler.min.css') }}">
 <!-- Style CSS -->
-<link rel="stylesheet" href="../static/css/style.css">
-<!-- Responsive  CSS -->
-<link rel="stylesheet" href="../static/css/responsive.css">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css') }}">
 </head>
 
 <body>
@@ -69,7 +71,7 @@
                         </div>
                         <!--/card-block-->
 						<div class="card-footer">
-							<div class="copy-text">Copyright &copy; 2024.Write Like Good Omens All rights reserved.<a target="_blank" href="http://sc.chinaz.com/moban/">About Us</a></div>
+							<div class="copy-text">Copyright &copy; 2024.Write Like Good Omens All rights reserved.<a target="_blank" href="/trick">About Us</a></div>
 						</div>
                     </div>
                     <!-- /form card login -->
