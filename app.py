@@ -22,7 +22,8 @@ def index():
     #render template can do more than opening the file, it allow us to modify file
     f = forms.AddTaskForm()
     if f.validate_on_submit():
-        return render_template("success.html", form = f, head2 = processor.do(f.str.data))
+        result = processor.do(f.str.data)
+        return render_template("success.html", form = f, head2 = result[0], head3 = result[1], head4 = result[2])
     return render_template("index.html", form = f)
 
 @app.route("/about")
