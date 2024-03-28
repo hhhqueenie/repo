@@ -30,6 +30,18 @@ def index():
 def about():
     return render_template("about.html", about_head1="关于这个测试", about_p1="其实是随便写着玩的啦，但这里是一个很有趣的灯光开关",about_head2="Surprise the buttons are just for show")
 
+@app.route("/fancierIndex", methods = ["GET", "POST"])
+def fancy():
+    f = forms.AddTaskForm()
+    print("enter fancy")
+    print(f.str.data)
+    if f.validate_on_submit():
+        print("this is very fancy, validating")
+        result = processor.do(f.str.data)
+        return render_template("fancierSucc.html", form = f, head2 = result[0], head3 = result[1], head4 = result[2], bod = result[3])
+    print("not fancy")
+    print(f.str.data)
+    return render_template("fancierIndex.html", form=f)
 
 
 #something that is like a main() in java

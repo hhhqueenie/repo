@@ -13,14 +13,17 @@ except ValueError:
     classifier.save_model('data/classifier.model')
     
 def do(text):
+    original = text
     text = data_preprocess.text_predict(text)
     pred = classifier.predict(text, k = -1)
     #s = f"你的文章有 {round(pred[1][0], 2)} 的概率像 {label2cate[pred[0][0]]}" +/n
     result = []
-    original = text if len(text) < 50 else "太长了，小程序放不下了啦"
+    #original = text if len(text) < 50 else "太长啦，不显示啦 QwQ "
     for i in range(3):
         result.append(f"有 {round(pred[1][i] * 100, 2)} % 的概率像 {label2cate[pred[0][i]]}")
     
+    #result.append(original)
+
     result.append(original)
 
     return result
