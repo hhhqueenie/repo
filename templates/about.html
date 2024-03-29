@@ -11,6 +11,7 @@
     <input type="button" onclick="on()" value="开灯">
     <img id="myImage" border="0" src="{{ url_for('static', filename='off.gif') }}" style="text-align:center;">
     <input type="button" onclick="off()" value="关灯">
+    <input type="button" onclick="broke()" value="千万不要碰">
     <script>
         function on(){
             document.getElementById('myImage').src="{{ url_for('static', filename='on.gif') }}"
@@ -20,14 +21,16 @@
             document.getElementById('myImage').src="{{ url_for('static', filename='off.gif') }}"
         }
         
-        var b = true
-        setInterval(function(){if(b){
-            b = false;
-            on();
-        } else {
-            off();
-            b = true;
-        }}, 1000)
+        function broke(){
+            var b = true
+            setInterval(function(){if(b){
+                b = false;
+                on();
+            } else {
+                off();
+                b = true;
+            }}, 1000)
+        }
 
     </script>
 </body>
