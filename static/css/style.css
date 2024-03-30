@@ -8,8 +8,11 @@ body{
 	margin: 0px;
 	padding: 0px;
 	font-family: 'Ubuntu', sans-serif;
-	background: url(../test.JPG) center;
-	background-size: contain;
+	background: url(../test.JPG) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 html {  
 	-ms-overflow-style: scrollbar; 

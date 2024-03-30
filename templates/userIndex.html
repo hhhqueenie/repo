@@ -1,0 +1,18 @@
+{% extends "base.html"%}
+
+{% block main %}
+<h1>测测你是谁 用户版</h1>
+<form action="/userIndex" method="POST">
+  {{ form.csrf_token() }}
+  {{ form.str.label }}
+  {{ form.str }}
+  {{ form.submit }}
+</form>
+
+
+
+{% if str %}
+    <p>{{str}}</p>
+{% endif %}
+
+{% endblock main %}

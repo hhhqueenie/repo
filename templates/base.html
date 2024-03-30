@@ -6,15 +6,22 @@
 <title>文字测试</title>
 <meta name="description" content="">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/ourstyle.css') }}">
 
 </head>
 <body>
-<a href="/">Home</a>
-<a href="/about">About</a>
-<a href="/fancierIndex">BetterHome</a>
+
+<header>
+    <nav class="navigation">
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/fancierIndex">BetterHome</a>
+        <!-- <a href="/join">JoinUs</a> -->
+    </nav>
+</header>
 
 {% block main%}
 {% endblock main%}
 </body>
+
 </html>

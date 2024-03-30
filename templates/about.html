@@ -1,17 +1,21 @@
 {% extends "base.html"%}
 
 {% block main %}
-
-<h1>{{ about_head1 }}</h1>
-<p>{{ about_p1 }}</p>
-
-<h2>{{ about_head2 }}</h2>
+    
 
 <body>
-    <input type="button" onclick="on()" value="开灯">
-    <img id="myImage" border="0" src="{{ url_for('static', filename='off.gif') }}" style="text-align:center;">
-    <input type="button" onclick="off()" value="关灯">
-    <input type="button" onclick="broke()" value="千万不要碰">
+    <div class="container">
+
+        <h1>{{ about_head1 }}</h1>
+        <p>{{ about_p1 }}</p>
+
+        <h2>{{ about_head2 }}</h2>
+
+        <input type="button" onclick="on()" value="开灯">
+        <img id="myImage" border="0" src="{{ url_for('static', filename='off.gif') }}" style="text-align:center;">
+        <input type="button" onclick="off()" value="关灯">
+        <input type="button" onclick="broke()" value="千万不要碰">
+    </div>
     <script>
         function on(){
             document.getElementById('myImage').src="{{ url_for('static', filename='on.gif') }}"

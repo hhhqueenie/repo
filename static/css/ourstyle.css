@@ -1,0 +1,93 @@
+
+  body {
+    margin: 0;
+    background: url(../starry.jpg) no-repeat center center fixed;
+    background-size: cover; /* Adjusted to cover the full body */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  header {
+    background-color: black;
+    padding: 10px 0;
+    color: white;
+    text-align: center;
+    width: 100%;
+    position: fixed; /* Keep the header fixed at the top */
+    top: 0;
+    z-index: 1; /* Ensure the header is above other content */
+  }
+
+  .container {
+    width: 50%;
+    height:60%;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-image: url(../arc.png);
+    background-size: auto auto;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 60px;
+    position: relative; /* Add position relative to contain absolute-positioned form */
+    z-index: 0; /* Ensure the container is below other content */
+    opacity: 0.8;
+  }
+
+  h1 {
+    color: #000000;
+  }
+
+  form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%; /* Adjusted to 80% */
+    max-width: 400px; /* Added maximum width to prevent it from becoming too wide */
+  }
+
+  input[type="text"], input[type="submit"] {
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box;
+    outline: none;
+    max-width: 100%; /* Added maximum width to prevent it from becoming too wide */
+  }
+
+  input[type="text"] {
+    padding: 100px;
+  }
+  input::placeholder {
+    text-align: center;
+    font-size: larger;
+  }
+
+  input[type="submit"] {
+    background: #000000;
+    color: #fff;
+    cursor: pointer;
+    border: none;
+    border-radius: 3px;
+    box-sizing: border-box;
+    font-size: 16px;
+  }
+
+  .logo {
+    font-weight: bold;
+  }
+
+  .navigation {
+    display: flex;
+    gap: 20px;
+  }
+
+  .navigation a {
+    color: white;
+    text-decoration: none;
+  }

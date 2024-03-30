@@ -1,0 +1,18 @@
+{% extends "base.html"%}
+
+{% block main %}
+<h1>加入测试</h1>
+<form action="/join" method="POST">
+  {{ form.csrf_token() }}
+  {{ form.user_name.label }}
+  {{ form.user_name }}
+  {{ form.input.label }}
+  {{ form.input }}
+  {{ form.submit }}
+</form>
+
+{% if input %}
+    <p>{{input}}</p>
+{% endif %}
+
+{% endblock main %}
