@@ -49,7 +49,8 @@
     max-width: 400px; /* Added maximum width to prevent it from becoming too wide */
   }
 
-  input[type="text"], input[type="submit"] {
+  /* input[type="submit"], input[type="password"],  */
+  textarea, input[type="submit"], input[type="password"] {
     width: 100%;
     padding: 15px;
     margin: 10px 0;
@@ -57,18 +58,20 @@
     border-radius: 3px;
     box-sizing: border-box;
     outline: none;
-    max-width: 100%; /* Added maximum width to prevent it from becoming too wide */
   }
 
-  input[type="text"] {
-    padding: 100px;
+  textarea {
+    resize: vertical; /* Allow vertical resizing */
+    overflow-y: auto; /* Enable vertical scrollbar if needed */
   }
+
   input::placeholder {
     text-align: center;
     font-size: larger;
   }
 
   input[type="submit"] {
+    width: 50%;
     background: #000000;
     color: #fff;
     cursor: pointer;
@@ -76,10 +79,24 @@
     border-radius: 3px;
     box-sizing: border-box;
     font-size: 16px;
+    max-width: 70%; /* Added maximum width to prevent it from becoming too wide */
   }
 
-  .logo {
-    font-weight: bold;
+    /* Style the select field */
+  select {
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box;
+    outline: none;
+    font-size: larger; /* Adjust font size for select field */
+  }
+
+  /* Style the options within the select field */
+  select option {
+    font-size: larger; /* Adjust font size for options */
   }
 
   .navigation {
