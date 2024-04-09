@@ -16,6 +16,7 @@ class SecretForm(FlaskForm):
     submit = SubmitField("输入")
 
 class QueryForm(FlaskForm):
-    choices = [("user", "用户输入"), ("result", "统计数据")]
+    #choices = [("user", "用户输入"), ("result", "统计数据")]
+    choices = [("result", "统计数据")]
     fields = SelectField('Select Field', choices=choices, validators=[InputRequired()])
     submit = SubmitField("确定")

@@ -44,12 +44,13 @@ def secretdata():
 def querydata():
     f = forms.QueryForm()
     if f.validate_on_submit():
-        if f.fields.data == "user" :
-            result = getAllUserInputs()
-            return render_template("userInput.html", resType="用户" ,myList=result)
-        else: 
-            result = getAllFrenquency()
-            return render_template("userInput.html", resType="统计", myList=result)
+        return render_template("userInput.html", resType="统计", myList=getAllFrenquency())
+        # if f.fields.data == "user" :
+        #     result = getAllUserInputs()
+        #     return render_template("userInput.html", resType="用户" ,myList=result)
+        # else: 
+        #     result = getAllFrenquency()
+        #     return render_template("userInput.html", resType="统计", myList=result)
     return render_template("query.html", form=f)    
 # @app.route("/trick")
 # def trick():
