@@ -118,6 +118,6 @@ def find_works_contained(author_names:list[str]):
     return works_dict
 
 if __name__ == '__main__':
-    #df = statistics('data/Foreign')
-    #df.to_excel('data/files/info.xlsx')
+    df = statistics('data/Foreign')
+    df.to_excel('data/files/info.xlsx')
     preprocess(['data/燃冬有好兆头', 'data/Foreign'])

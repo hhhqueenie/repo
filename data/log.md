@@ -1,3 +1,4 @@
+# Data Sets
 ## Naming rules
 + **author name_book name.txt**
 + list.csv: 
@@ -10,16 +11,8 @@
 ## Text Checking (manual)
 1. 删除译者序/前言
 2. 简中
-3. 删除网站标签 ctrl+f搜索w (utils里写了自动化，不用手动了)
-4. 后序/后言
-5. 注释尽量都删了
-查到 东野圭吾
-
-## Utils:
-1. word count (for checking data balance)
-   + param: author's Chinese name
-2. transform traditional Chinese to simplified Chinese
-   + 主要还是需要手动check文章质量
+3. 后序/后言
+4. 注释尽量都删了
 
 ## 需要添加的外国作家
 + 道格拉斯·亚当斯_银河系漫游五部曲 不全
@@ -27,12 +20,14 @@
 + 冰与火之歌
 + 阿西莫夫 重选
 
-## Preprocess:
-+ Replace `○` to be 零
-+ 数字全洗了
-+ 第x章 全洗了
-+ '[x]' 注释洗了
-+ 转小写 删空格 www的删了
 
 ## 改进
-+ NER 加入分词dictionary
++ NER 加入分词dictionary - 感觉没必要 训练集怎么分的predict还会怎么分 不应该影响结果
++ build test set
+
+# Front-end
+1. Input page: 输入框再user friendly一些，加一个combo box for user to choose matching Foriegn or Chinese authors.
+2. result page: 按照UI design美化，在结果下显示输入的原文(might add explainable AI in here by highlighting the sentences that influce classification decision the most)
+3. size self adjustment: especially mobile
+
+# Back-end
