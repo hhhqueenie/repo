@@ -162,4 +162,4 @@ cython_debug/
 test.txt
 test.ipynb
 *.model
-*.xlsx
+train.txt
