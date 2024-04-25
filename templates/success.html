@@ -8,16 +8,17 @@
         测试结果如下
     </h4>
     
-    <h2>{{ head2 }}</h2>
-    
-    <h3>{{ head3 }}</h3>
-    
-    <h4>{{ head4 }}</h4>
+    {% for i in range(0, 6, 2) %}
+
+        <h2>{{ result[i] }}</h2>
+        <h3>{{ result[i+1] }}</h3>
+        
+    {% endfor %}
 
     <p>
     </br>
         输入内容：
-        {{ bod }} </br>
+        {{ result[-1] }} </br>
     </p>
     
     <h6>

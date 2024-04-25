@@ -24,7 +24,7 @@ def index():
     f = forms.AddTaskForm()
     if f.validate_on_submit():
         result = processor.do(f.str.data)
-        return render_template("success.html", form = f, head2 = result[0], head3 = result[1], head4 = result[2], bod = result[3])
+        return render_template("success.html", form = f, result = result)
     return render_template("index.html", form = f)
 
 @app.route("/about")
