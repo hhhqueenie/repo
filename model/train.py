@@ -1,7 +1,7 @@
 import fasttext
 
 def fit(train_set_path):
-    return fasttext.train_supervised(input=train_set_path, wordNgrams=2, epoch=50, lr=0.1, dim=300)
+    return fasttext.train_supervised(input=train_set_path, wordNgrams=2, epoch=100, lr=0.1, dim=300)
 
 if __name__ == '__main__':
     classifier = fit('data/files/train.txt')
