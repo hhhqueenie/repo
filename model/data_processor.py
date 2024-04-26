@@ -81,7 +81,7 @@ def statistics(folder_path:str):
             try:
                 f = open(file_path,"r",encoding='utf-8')
                 author = file_name.split('_')[0]
-                work = [file_name.split('_')[1][:-4]]
+                work = file_name.split('_')[1][:-4] # [:-4]:remove .txt
                 paras = get_paragraphs(f.read())
             except UnicodeDecodeError:
                 print(f"UnicodeDecodeError: Failed to decode file '{file_name}'. Skipping...")
@@ -89,7 +89,7 @@ def statistics(folder_path:str):
 
             if author in sta['Author']:
                 index = sta['Author'].index(author)
-                sta['Works Contained'][index].extend(work)
+                sta['Works Contained'][index]+= ("," + work)
                 sta['Total Para Count'][index] += len(paras)
             else:
                 sta['Author'].append(author)
@@ -109,15 +109,19 @@ def text_predict(text):
     words = jieba.lcut(text)
     return " ".join(words)
 
-def find_works_contained(author_names:list[str]):
+def get_works_contained(author_names:list[str]):
     df = pd.read_excel('data/files/info.xlsx')
-    works_dict = {}
-    for author_name in author_names:
-        works_contained = df.loc[df['Author'] == author_name, 'Works Contained'].tolist()
-        works_dict[author_name] = works_contained
-    return works_dict
+    works_contained = {}
+    for author in author_names:
+        author_row = df.loc[df['Author'] == author]
+        if author_row.empty:
+            works_contained[author] = None
+        else:
+            works_contained[author] = author_row['Works Contained'].values[0]
+    return works_contained
 
 if __name__ == '__main__':
+    #print(get_works_contained(['菲茨杰拉德']))
     df = statistics('data/Foreign')
     df.to_excel('data/files/info.xlsx')
-    preprocess(['data/燃冬有好兆头', 'data/Foreign'])
+    #preprocess(['data/燃冬有好兆头', 'data/Foreign'])
