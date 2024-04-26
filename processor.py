@@ -26,7 +26,7 @@ def do(text):
     #original = text if len(text) < 50 else "太长啦，不显示啦 QwQ "
     #redisUse.recordResult(ind2label[pred[0][0]])
     for i in range(3):
-        result.append(f"你有 {round(pred[1][i] * 100, 2)} % 的 {ind2label[pred[0][i]]}成分")
+        result.append(f"你有 {round(pred[1][i] * 100, 2)} % 的 {ind2label[pred[0][i]]} 成分")
         result.append(f"这位作者的作品有：{author2work[ind2label[pred[0][i]]]}")
     
     #result.append(original)
