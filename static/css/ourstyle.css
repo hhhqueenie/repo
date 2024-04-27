@@ -108,3 +108,24 @@
     color: white;
     text-decoration: none;
   }
+
+/* Media query for smaller screens */
+@media only screen and (max-width: 768px) {
+
+  h1 {
+    font-size: 1.5em; /* Adjust font size of h1 */
+    margin-bottom: 10px; /* Add margin at bottom */
+  }
+
+  h2 {
+    font-size: 1.2em; /* Adjust font size of h2 */
+    margin-top: 10px; /* Add margin at top */
+    margin-bottom: 5px; /* Reduce bottom margin */
+  }
+
+  h5 {
+    font-size: 0.9em; /* Adjust font size of h5 */
+    margin-top: 5px; /* Reduce top margin */
+    margin-bottom: 10px; /* Add margin at bottom */
+  }
+}
