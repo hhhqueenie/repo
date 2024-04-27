@@ -24,7 +24,7 @@ def do(text):
     #s = f"你的文章有 {round(pred[1][0], 2)} 的概率像 {label2cate[pred[0][0]]}" +/n
     result = []
     #original = text if len(text) < 50 else "太长啦，不显示啦 QwQ "
-    #redisUse.recordResult(ind2label[pred[0][0]])
+    redisUse.recordResult(ind2label[pred[0][0]])
     for i in range(3):
         result.append(f"你有 {round(pred[1][i] * 100, 2)} % 的 {ind2label[pred[0][i]]} 成分")
         result.append(f"这位作者的作品有：{author2work[ind2label[pred[0][i]]]}")

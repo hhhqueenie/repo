@@ -2,9 +2,10 @@
 
 {% block main %}
 <div class="container">
-  <h1>测测你是谁</h1>
+  <h1>输入一段文字，测风格像哪位作家</h1>
 <form action="/" method="POST">
   {{ form.csrf_token() }}
+  <h4>本测试仅提取中文，不考虑特殊字符包括英语内容</h4>
   {{ form.str }}
   {{ form.submit }}
 

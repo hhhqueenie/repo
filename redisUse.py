@@ -24,7 +24,9 @@ def getFrequency(result):
 
 def getAllFrenquency():
     result = ["there has been "+str(getInputCount())+" inputs"]
-    for key in ['Crowley1678', 'Crowley4680', 'Aziraphale4201']:
-        result.append(key + " occured -> " + str(getFrequency(key)) + " times")
+    for key in redisClient.hkeys('result_frequencies'):
+        st = key.decode('utf-8') + " occured -> " + str(getFrequency(key)) + " times"
+        print(st)
+        result.append(st)
     return result
 
