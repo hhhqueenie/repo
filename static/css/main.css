@@ -1,0 +1,92 @@
+body {
+    background-image: url(../starry.jpg);
+    background-size: cover;
+    /* Adjusted to cover the full body */
+    padding: 2em;
+}
+
+nav.navigation {
+    display: flex;
+    gap: 1em;
+}
+
+.navigation a {
+    color: white;
+    font-size: 1em;
+    text-decoration: none;
+    padding: 0.5em 1em;
+    border-color: white;
+    border-style: solid;
+    border-radius: 2em;
+    border-width: medium;
+    fill: black;
+    fill-opacity: 50%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.container {
+    background: white;
+    border-radius: 50% 50% 0 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    max-width: 1000px;
+    max-height: -moz-fit-content;
+    max-height: fit-content;
+    text-align: center;
+    aspect-ratio: 1;
+}
+
+.container h1 {
+    font-size: 3rem;
+    font-size: min(8vw, 3rem);
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.container h5 {
+    font-size: 0.5vw;
+}
+
+form.textInput {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    bottom: 0%;
+    width: 100%;
+    height: 50%;
+}
+
+textarea.formInput {
+    position: relative;
+    left: 5%;
+    width: 90% !important;
+    padding: 10px !important;
+    /* -webkit-box-sizing: border-box; */
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    display: block;
+    border-style: solid;
+    border-width: medium;
+    border-radius: 1em;
+    flex: 1;
+}
+
+input[type=submit] {
+    padding: 0.5em 1em;
+    background: black;
+    font-size: min(3vw, 1.5rem);
+    border: 0 none;
+    cursor: pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 2em;
+    color: white;
+    margin: 1em;
+    width: -moz-fit-content;
+    width: fit-content;
+    margin-left: auto;
+}

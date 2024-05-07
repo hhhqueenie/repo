@@ -1,27 +1,22 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title>文字测试</title>
-<meta name="description" content="">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="{{ url_for('static', filename='css/ourstyle.css') }}">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>文字测试</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
 
 </head>
+
 <body>
 
-<header>
-    <nav class="navigation">
-        <a href="/">Home</a>
-        <a href="/about">About</a>
-        <!-- <a href="/fancierIndex">BetterHome</a> -->
-        <a href="/secret">Developers</a>
-    </nav>
-</header>
+    {% include 'navigation.html' %}
 
-{% block main%}
-{% endblock main%}
+    {% block main%}
+    {% endblock main%}
 </body>
 
 </html>
