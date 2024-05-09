@@ -1,10 +1,12 @@
+# -*- coding: utf-8 -*-
+
 from lime.lime_text import LimeTextExplainer
 import numpy as np
 import re
 import json
 
 class Explainer():
-
+    
     def __init__(self, classifier):
         self.classifier = classifier
         label2ind = json.load(open('data/files/label2ind.json', 'r', encoding='utf-8'))
@@ -28,3 +30,34 @@ class Explainer():
         model = LimeTextExplainer(split_expression=self.split_rule, class_names=list(self.ind2label.values()))
         exp = model.explain_instance(text, self.predict_proba, num_features=1000, top_labels=3)
         return exp
+    
+    
+    def get_explaination_with_positions(self, text):
+        """
+        Args:
+            text: str
+
+        Returns:
+            text: str 
+                This text is preprocessed, might be different from the user's original input. Please use this text to display the result.
+            result_dict: dict, key: author name, value: list of (start_pos, end_pos, score)
+        """
+        exp = self.get_explaination(text)
+        exp_map = exp.as_map()
+        result_dict = {}
+        for key in exp_map.keys():
+            indexes_scores = exp_map[key]
+            text = text.replace(' ', '')
+            sentences = self.split_rule(text)
+            result = []
+            for i, score in indexes_scores:
+                try:
+                    sentence = sentences[i]
+                    start = text.find(sentence)
+                    end = start + len(sentence)
+                    result.append((start, end, score))
+                except KeyError:
+                    print(f'Author with index {i} not found.')
+            author = self.ind2label[f'__label__{key}']
+            result_dict[author] = result
+        return text, result_dict
