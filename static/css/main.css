@@ -2,15 +2,20 @@ body {
     background-image: url(../starry.jpg);
     background-size: cover;
     /* Adjusted to cover the full body */
-    padding: 2em;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
 }
 
 nav.navigation {
     display: flex;
     gap: 1em;
+    margin: 1em;
 }
 
 .navigation a {
+
     color: white;
     font-size: 1em;
     text-decoration: none;
@@ -26,26 +31,26 @@ nav.navigation {
 
 .container {
     background: white;
-    border-radius: 50% 50% 0 0;
+    border-radius: 1em;
+    /*
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    */
     width: 100%;
     max-width: 1000px;
     max-height: -moz-fit-content;
     max-height: fit-content;
     text-align: center;
-    aspect-ratio: 1;
+    display: flex;
+    flex-direction: column;
+    flex: 0 1 auto;
 }
 
 .container h1 {
     font-size: 3rem;
     font-size: min(8vw, 3rem);
-    position: absolute;
-    top: 30%;
-    left: 50%;
-    transform: translate(-50%, -50%);
 }
 
 .container h5 {
@@ -53,15 +58,13 @@ nav.navigation {
 }
 
 form.textInput {
-    position: absolute;
     display: flex;
     flex-direction: column;
-    bottom: 0%;
-    width: 100%;
     height: 50%;
+    flex: 1
 }
 
-textarea.formInput {
+.formInput {
     position: relative;
     left: 5%;
     width: 90% !important;
@@ -76,7 +79,7 @@ textarea.formInput {
     flex: 1;
 }
 
-input[type=submit] {
+.button {
     padding: 0.5em 1em;
     background: black;
     font-size: min(3vw, 1.5rem);
@@ -89,4 +92,66 @@ input[type=submit] {
     width: -moz-fit-content;
     width: fit-content;
     margin-left: auto;
+}
+
+.spacer {
+    flex: 1;
+}
+
+.horizontal-flex {
+    display: flex;
+    flex-direction: row;
+    gap: 2em;
+    margin: 2em;
+}
+
+@media only screen and (max-width: 1000px) {
+    /* For mobile phones: */
+    .horizontal-flex {
+        flex-direction: column;
+    }
+
+    .spacer {
+        flex: 0;
+    }
+}
+
+/* About page specific stuff */
+
+
+.developer {
+    display: flex;
+    flex-direction: row;
+    margin: 2em;
+    padding: 1em;
+    border-radius: 1em;
+    border-style: solid;
+    border-width: 2px;
+}
+
+.developer-image {
+    flex: 0 1 auto;
+}
+
+.developer-text {
+    flex: 1 1 auto;
+}
+
+.avatar {
+    width: 10em;
+
+}
+
+@media only screen and (max-width: 1000px) {
+    .developer {
+        flex-direction: column;
+    }
+}
+
+/* Results page specific stuff */
+
+hr{
+    color: black;
+    width: 90%;
+    border: 2px solid black;
 }

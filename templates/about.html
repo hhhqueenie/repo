@@ -1,43 +1,69 @@
 {% extends "base.html"%}
 
 {% block main %}
-    
 
 <body>
-    <div class="container">
+    <div class="horizontal-flex">
+        <div class="container">
+            <h1>About this app</h1>
+            This app is made with the intent of blah blah blah because of blah blah blah.
+        </div>
 
-        <h1>{{ about_head1 }}</h1>
-        <p>{{ about_p1 }}</p>
+        <div class="container">
+            <h1>Developers</h1>
 
-        <h2>{{ about_head2 }}</h2>
-
-        <input type="button" onclick="on()" value="开灯">
-        <img id="myImage" border="0" src="{{ url_for('static', filename='off.gif') }}" style="text-align:center;">
-        <input type="button" onclick="off()" value="关灯">
-        <input type="button" onclick="broke()" value="千万不要碰">
+            This app is made with ❤️ by these cool people.
+            <div class="developer">
+                <div class="developer-image">
+                    <img class="avatar" src="https://avatars.githubusercontent.com/u/164995162?v=4" alt="Avatar" />
+                </div>
+                <div class="developer-text">
+                    <div class="developer-name">
+                        <h2> iliyuetemp </h2>
+                    </div>
+                    <div class="developer-name">
+                        <h3> SOCIAL LINKS GO HERE </h3>
+                    </div>
+                    <div class="developer-details">
+                        Shrouded in mystery
+                    </div>
+                </div>
+            </div>
+            <div class="developer">
+                <div class="developer-image">
+                    <img class="avatar" src="https://avatars.githubusercontent.com/u/72519414?v=4" alt="Avatar" />
+                </div>
+                <div class="developer-text">
+                    <div class="developer-name">
+                        <h2> Ankie fan</h2>
+                    </div>
+                    <div class="developer-name">
+                        <h3> SOCIAL LINKS GO HERE </h3>
+                    </div>
+                    <div class="developer-details">
+                        Powered by Hannibal Lector.
+                    </div>
+                </div>
+            </div>
+            <div class="developer">
+                <div class="developer-image">
+                    <img class="avatar" src="{{ url_for('static', filename='images/bloom/ClosedWithGlowCropped.png') }}"
+                        alt="Avatar" />
+                </div>
+                <div class="developer-text">
+                    <div class="developer-name">
+                        <h2> Derrick "Bloom" Timmermans </h2>
+                    </div>
+                    <div class="developer-name">
+                        <h3> SOCIAL LINKS GO HERE </h3>
+                    </div>
+                    <div class="developer-details">
+                        Nyaaaa :3
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <script>
-        function on(){
-            document.getElementById('myImage').src="{{ url_for('static', filename='on.gif') }}"
-        }
-
-        function off(){
-            document.getElementById('myImage').src="{{ url_for('static', filename='off.gif') }}"
-        }
-        
-        function broke(){
-            var b = true
-            setInterval(function(){if(b){
-                b = false;
-                on();
-            } else {
-                off();
-                b = true;
-            }}, 1000)
-        }
-
-    </script>
 </body>
 
 {% endblock main %}
-
