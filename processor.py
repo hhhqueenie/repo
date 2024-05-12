@@ -22,10 +22,11 @@ def do(text):
         result.append(f"这位作者的参考作品有：{' '.join([f'《{work}》' for work in pred[i][3]])}")
     
     result.append(original)
+    pred.append(original)
 
     # print("user input as follows: ")
     # print(redisUse.getAllUserInputs())
     # print("total frequency as follows: ")
     # print(redisUse.getAllFrenquency())
 
-    return result
+    return pred

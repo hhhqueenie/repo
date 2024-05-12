@@ -100,6 +100,8 @@ form.textInput {
     margin: 2em;
 }
 
+
+
 @media only screen and (max-width: 1000px) {
 
     /* For mobile phones: */
@@ -150,6 +152,36 @@ form.textInput {
 
 hr {
     color: black;
-    width: 90%;
+    width: 100%;
     border: 2px solid black;
+}
+
+.bigText{
+    font-size: 5em;
+    font-weight: 900;
+}
+
+.mediumText {
+    font-size: 2em;
+    font-weight: 700;
+}
+.medSmallText{
+    font-size: 1.5em;
+    font-weight: 300;
+}
+.vertical-flex {
+    display: flex;
+    flex-direction: column;
+}
+
+.align-left{
+    text-align: left;
+}
+.padding{
+    padding: 2em;
+}
+.noMarginPadding{
+    margin: 0;
+    padding: 0;
+    gap:0;
 }
