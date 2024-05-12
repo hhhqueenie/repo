@@ -6,7 +6,6 @@ import re
 import json
 
 class Explainer():
-    
     def __init__(self, classifier):
         self.classifier = classifier
         label2ind = json.load(open('data/files/label2ind.json', 'r', encoding='utf-8'))
@@ -40,24 +39,35 @@ class Explainer():
         Returns:
             text: str 
                 This text is preprocessed, might be different from the user's original input. Please use this text to display the result.
-            result_dict: dict, key: author name, value: list of (start_pos, end_pos, score)
+            result: { (start_pos, end_pos) : [(author1, score1), (author2, score2), (author3, score3)] }
         """
+        if(len(self.split_rule(text)) <= 1):
+            return text.replace(' ', ''), None
+        
         exp = self.get_explaination(text)
         exp_map = exp.as_map()
-        result_dict = {}
+        
+        text = text.replace(' ', '')
+        sentences = self.split_rule(text)
+
+        result = {}
+
         for key in exp_map.keys():
             indexes_scores = exp_map[key]
-            text = text.replace(' ', '')
-            sentences = self.split_rule(text)
-            result = []
             for i, score in indexes_scores:
+                author = self.ind2label[f'__label__{key}']
+
+                sentence = sentences[i]
+                start_pos = text.find(sentence)
+                end_pos = start_pos + len(sentence)
+                score = round(score * 100, 2)
+                
                 try:
-                    sentence = sentences[i]
-                    start = text.find(sentence)
-                    end = start + len(sentence)
-                    result.append((start, end, score))
+                    result[(start_pos, end_pos)].append((author, score))
                 except KeyError:
-                    print(f'Author with index {i} not found.')
-            author = self.ind2label[f'__label__{key}']
-            result_dict[author] = result
-        return text, result_dict
+                    result[(start_pos, end_pos)] = [(author, score)]
+        
+        chinese_pattern = re.compile('[^\u4e00-\u9fff]+')
+        text = chinese_pattern.sub('', text)
+        
+        return text, result
