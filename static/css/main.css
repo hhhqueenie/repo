@@ -32,16 +32,11 @@ nav.navigation {
 .container {
     background: white;
     border-radius: 1em;
-    /*
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    */
     width: 100%;
     max-width: 1000px;
     max-height: -moz-fit-content;
     max-height: fit-content;
+    min-height: 600px;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -106,13 +101,14 @@ form.textInput {
 }
 
 @media only screen and (max-width: 1000px) {
+
     /* For mobile phones: */
     .horizontal-flex {
         flex-direction: column;
     }
 
-    .spacer {
-        flex: 0;
+    .container {
+        min-height: 300px;
     }
 }
 
@@ -130,7 +126,8 @@ form.textInput {
 }
 
 .developer-image {
-    flex: 0 1 auto;
+    flex: 0 0 auto;
+
 }
 
 .developer-text {
@@ -138,7 +135,8 @@ form.textInput {
 }
 
 .avatar {
-    width: 10em;
+    width: 100%;
+    max-width: 10em;
 
 }
 
@@ -150,7 +148,7 @@ form.textInput {
 
 /* Results page specific stuff */
 
-hr{
+hr {
     color: black;
     width: 90%;
     border: 2px solid black;
