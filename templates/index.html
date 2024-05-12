@@ -7,7 +7,7 @@
     <h1>测试写作风格</h1>
     <form class="textInput" action="/" method="POST">
       {{ form.csrf_token() }}
-      <h5>本测试仅提取中文，不考虑特殊字符包括英语内容</h5>
+      <h3>本测试仅提取中文，不考虑特殊字符包括英语内容</h3>
       {{ form.str(class_="formInput") }}
       {{ form.submit(class_="button") }}
 

@@ -48,10 +48,9 @@ nav.navigation {
     font-size: min(8vw, 3rem);
 }
 
-.container h5 {
-    font-size: 0.5vw;
+.container h3{
+    font-size: 1.2rem;
 }
-
 form.textInput {
     display: flex;
     flex-direction: column;
@@ -174,17 +173,17 @@ hr {
 }
 
 .bigText {
-    font-size: 5em;
+    font-size: min(5rem,10vw);
     font-weight: 900;
 }
 
 .mediumText {
-    font-size: 2em;
+    font-size: min(2em, 5vw);
     font-weight: 700;
 }
 
 .medSmallText {
-    font-size: 1.5em;
+    font-size: min(1.5em, 2.5vw);
     font-weight: 300;
 }
 
