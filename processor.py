@@ -1,13 +1,8 @@
-import numpy as np
 import fasttext
 from model import data_processor, train
 import redisUse
-import json
 
 #writer_list = ["4680", "4201", "1678","威廉·莎士比亚","但丁","荷马","列夫·托尔斯泰","乔叟", "狄更斯", "詹姆斯·乔伊斯", "弥尔顿", "维吉尔", "歌德"]
-
-label2ind = json.load(open('data/files/label2ind.json', 'r', encoding='utf-8'))
-ind2label = {value: key for key, value in label2ind.items()}
 
 try:
     classifier = fasttext.load_model('data/classifier.model')
@@ -19,17 +14,13 @@ def do(text):
     redisUse.addUserInput(text)
     original = text
     text = data_processor.text_predict(text)
-    pred = classifier.predict(text, k = 3)
-    author2work = data_processor.get_works_contained([ind2label[author] for author in pred[0]])
-    #s = f"你的文章有 {round(pred[1][0], 2)} 的概率像 {label2cate[pred[0][0]]}" +/n
+    pred = train.predict_formated_results(text, classifier)
     result = []
-    #original = text if len(text) < 50 else "太长啦，不显示啦 QwQ "
-    redisUse.recordResult(ind2label[pred[0][0]])
+    #redisUse.recordResult(pred[0][1])
     for i in range(3):
-        result.append(f"你有 {round(pred[1][i] * 100, 2)} % 的 {ind2label[pred[0][i]]} 成分")
-        result.append(f"这位作者的作品有：{author2work[ind2label[pred[0][i]]]}")
+        result.append(f"{round(pred[i][2] * 100, 2)} % 的 {pred[i][0]} 成分")
+        result.append(f"这位作者的参考作品有：{' '.join([f'《{work}》' for work in pred[i][3]])}")
     
-    #result.append(original)
     result.append(original)
 
     # print("user input as follows: ")
