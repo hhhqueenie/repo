@@ -172,7 +172,13 @@ hr {
     border: 2px solid black;
 }
 
+@font-face {
+    font-family: 'EngNumFont';
+    src: url('/static/eng_num_font.ttf') format('truetype');
+  }
+
 .bigText {
+    font-family: 'EngNumFont', sans-serif;
     font-size: min(5rem,10vw);
     font-weight: 900;
 }
