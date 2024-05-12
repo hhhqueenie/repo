@@ -129,6 +129,7 @@ form.textInput {
 
 .developer-image {
     flex: 0 0 auto;
+    
 
 }
 
@@ -139,7 +140,14 @@ form.textInput {
 .avatar {
     width: 100%;
     max-width: 10em;
+}
 
+.circle{
+    border-radius: 50% 50% 50% 50%;
+}
+
+.hlfCircle{
+    border-radius: 0% 0% 50% 50%;
 }
 
 @media only screen and (max-width: 1000px) {
