@@ -123,6 +123,7 @@ form.textInput {
     margin: 2em;
     border-style: solid;
     border-radius: 5em 1em 1em 5em;
+    border-width: 3px;
 }
 
 .developer-image {
@@ -131,6 +132,7 @@ form.textInput {
     border-color: black;
     border-style: solid;
     margin: -3px;
+    border-width: 3px;
     border-radius: 50% 50% 50% 50%;
 }
 
