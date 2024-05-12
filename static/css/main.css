@@ -33,7 +33,7 @@ nav.navigation {
     background: white;
     border-radius: 1em;
     width: 100%;
-    max-width: 1000px;
+    max-width: 1200px;
     max-height: -moz-fit-content;
     max-height: fit-content;
     min-height: 600px;
@@ -102,7 +102,7 @@ form.textInput {
 
 
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 1200px) {
 
     /* For mobile phones: */
     .horizontal-flex {
@@ -121,16 +121,17 @@ form.textInput {
     display: flex;
     flex-direction: row;
     margin: 2em;
-    padding: 1em;
-    border-radius: 1em;
     border-style: solid;
-    border-width: 2px;
+    border-radius: 5em 1em 1em 5em;
 }
 
 .developer-image {
     flex: 0 0 auto;
-    
-
+    height: 10em;
+    border-color: black;
+    border-style: solid;
+    margin: -3px;
+    border-radius: 50% 50% 50% 50%;
 }
 
 .developer-text {
@@ -142,17 +143,23 @@ form.textInput {
     max-width: 10em;
 }
 
-.circle{
+.circle {
     border-radius: 50% 50% 50% 50%;
 }
 
-.hlfCircle{
+.hlfCircle {
     border-radius: 0% 0% 50% 50%;
 }
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 1200px) {
     .developer {
         flex-direction: column;
+        border-radius: 1em;
+        padding: 1em;
+    }
+
+    .developer-image {
+        border-width: 0;
     }
 }
 
@@ -164,7 +171,7 @@ hr {
     border: 2px solid black;
 }
 
-.bigText{
+.bigText {
     font-size: 5em;
     font-weight: 900;
 }
@@ -173,23 +180,27 @@ hr {
     font-size: 2em;
     font-weight: 700;
 }
-.medSmallText{
+
+.medSmallText {
     font-size: 1.5em;
     font-weight: 300;
 }
+
 .vertical-flex {
     display: flex;
     flex-direction: column;
 }
 
-.align-left{
+.align-left {
     text-align: left;
 }
-.padding{
+
+.padding {
     padding: 2em;
 }
-.noMarginPadding{
+
+.noMarginPadding {
     margin: 0;
     padding: 0;
-    gap:0;
+    gap: 0;
 }
