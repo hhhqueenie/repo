@@ -1,28 +1,25 @@
 {% extends "base.html"%}
 
 {% block main %}
+<div class="horizontal-flex">
+    <div class="spacer"> </div>
+    <div class="container">
 
-<div class="container">
-    
-    <h4>
-        {{ resType }} 数据如下
-    </h4>
-    
-    {% for item in myList%}
-    <p>
-    </br>
-        {{ item }} </br>
-    </p>
+        <h1>
+            {{ resType }}数据如下
+        </h1>
 
-    {% endfor %}
+        {% for item in myList%}
+        <p>
+            </br>
+            {{ item }} </br>
+        </p>
 
-    <a href="/query" class="repeat">查查别的</a>
+        {% endfor %}
+
+        <a href="/query" class="button">查查别的</a>
+    </div>
+    <div class="spacer"> </div>
 </div>
-
-<style>
-    repeat{
-        color:blue;
-    }
-</style>
 
 {% endblock main %}

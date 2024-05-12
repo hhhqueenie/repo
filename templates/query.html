@@ -1,19 +1,22 @@
 {% extends "base.html"%}
 
 {% block main %}
+<div class="horizontal-flex">
+  <div class="spacer"> </div>
+  <div class="container">
+    <h1>要查看什么呢...</h1>
+    <form action="/query" method="POST">
+      {{ form.csrf_token() }}
+      {{ form.fields(class_="formInput") }}
+      {{ form.submit(class="button") }}
+    </form>
 
-<div class="container">
-  <h1>要查看什么呢...</h1>
-<form action="/query" method="POST">
-  {{ form.csrf_token() }}
-  {{ form.fields() }}
-  {{ form.submit }}
-</form>
-
-{% if str %}
+    {% if str %}
     <p>{{str}}</p>
-{% endif %}
+    {% endif %}
 
+  </div>
+  <div class="spacer"> </div>
 </div>
 
 {% endblock main %}

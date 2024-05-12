@@ -1,37 +1,42 @@
 {% extends "base.html"%}
 
 {% block main %}
+<div class="horizontal-flex">
+    <div class="spacer"> </div>
+    <div class="container">
+        <h1>
+            你写得像……
+        </h1>
 
-<div class="container">
-    
-    <h4>
-        测试结果如下
-    </h4>
-    
-    {% for i in range(0, 6, 2) %}
+        <hr />
 
-        <h2>{{ result[i] }}</h2>
-        <h3>{{ result[i+1] }}</h3>
-        
-    {% endfor %}
+        <h1>{{ result[0] }}</h2>
+        <h2>{{ result[1] }}</h3>
 
-    <p>
-    </br>
-        输入内容：
-        {{ result[-1] }} </br>
-    </p>
-    
-    <h6>
-        但是悄悄告诉你，因为小程序喜欢帽子，所以它觉得一切都很像4680喔
-    </h6>
+        <hr />
 
-    <a href="/home" class="repeat">再来一次</a>
+        {% for i in range(2, 6, 2) %}
+        <h3>{{ result[i] }}</h2>
+        <h4>{{ result[i+1] }}</h3>
+        {% endfor %}
+
+        <hr />
+
+        <p>
+            </br>
+            输入内容：
+            {{ result[-1] }} </br>
+        </p>
+
+        <hr />
+
+        <h6>
+            仍在施工内测中，请勿外传噢！
+        </h6>
+
+        <a href="/home" class="button">再来一次</a>
+    </div>
+    <div class="spacer"> </div>
 </div>
-
-<style>
-    repeat{
-        color:blue;
-    }
-</style>
 
 {% endblock main %}

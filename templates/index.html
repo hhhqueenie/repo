@@ -1,20 +1,24 @@
 {% extends "base.html"%}
 
 {% block main %}
-<div class="container">
-  <h1>测试写作风格</h1>
-<form class="textInput" action="/" method="POST">
-  {{ form.csrf_token() }}
-  <h5>本测试仅提取中文，不考虑特殊字符包括英语内容</h5>
-  {{ form.str(class_="formInput") }}
-  {{ form.submit }}
+<div class="horizontal-flex">
+  <div class="spacer"> </div>
+  <div class="container">
+    <h1>测试写作风格</h1>
+    <form class="textInput" action="/" method="POST">
+      {{ form.csrf_token() }}
+      <h5>本测试仅提取中文，不考虑特殊字符包括英语内容</h5>
+      {{ form.str(class_="formInput") }}
+      {{ form.submit(class_="button") }}
 
-</form>
+    </form>
 
-{% if str %}
+    {% if str %}
     <p>{{str}}</p>
-{% endif %}
+    {% endif %}
 
+  </div>
+  <div class="spacer"> </div>
 </div>
 
 {% endblock main %}
