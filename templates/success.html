@@ -3,62 +3,65 @@
 {% block main %}
 <div class="horizontal-flex">
     <div class="spacer"> </div>
-    <div class="container align-left padding">
-        <h1>
-            你写得像……
-        </h1>
-
-        <hr />
-
-
-        <div class="bigText">{{ result[0][1] }}</div> <!--English name-->
-        <div class="mediumText">{{ result[0][0] }}</div><!--CN name-->
-
-        <br/>
-        <div class="horizontal-flex noMarginPadding">
-
-            <div class="vertical-flex">
-                <div class="spacer"> </div>
-                {% for work in result[0][3]%}
-                <div class="medSmallText">《{{work}}》</div>
-
-                {%endfor%}
-                <div class="spacer"> </div>
-            </div>
-            <div class="spacer"> </div>
-
-            <div>
-                <div class="bigText">{{'%0.2f'| format(result[0][2] * 100|float)}}%</div> <!-- percentage-->
-            </div>
-
-        </div>
-
-        <!-- works-->
-        <hr />
-
-        <div class="medSmallText">
-            <p>
-                也很像{{result[1][0]}} ({{'%0.2f'| format(result[1][2] * 100|float)}}%)
-            </p>
-            <p>
-                或者{{result[2][0]}}({{'%0.2f'| format(result[2][2] * 100|float)}}%)
-            </p>
+    <div class="container">
+        <div class="align-left padding">
+            <h1>
+                你写得像……
+            </h1>
 
             <hr />
 
-            <p>仍在施工内测中，请勿外传噢！</p>
 
+            <div class="bigText">{{ result[0][1] }}</div> <!--English name-->
+            <div class="mediumText">{{ result[0][0] }}</div><!--CN name-->
+
+            <br />
+            <div class="horizontal-flex noMarginPadding">
+
+                <div class="vertical-flex">
+                    <div class="spacer"> </div>
+                    {% for work in result[0][3]%}
+                    <div class="medSmallText">《{{work}}》</div>
+
+                    {%endfor%}
+                    <div class="spacer"> </div>
+                </div>
+                <div class="spacer"> </div>
+
+                <div>
+                    <div class="bigText">{{'%0.2f'| format(result[0][2] * 100|float)}}%</div> <!-- percentage-->
+                </div>
+
+            </div>
+
+            <!-- works-->
             <hr />
-            <h3>
-                输入内容：
-            </h3>
-            <p>
-                {{ result[-1] }}
-            </p>
 
+            <div class="medSmallText">
+                <p>
+                    也很像{{result[1][0]}} ({{'%0.2f'| format(result[1][2] * 100|float)}}%)
+                </p>
+                <p>
+                    或者{{result[2][0]}}({{'%0.2f'| format(result[2][2] * 100|float)}}%)
+                </p>
+
+                <hr />
+
+                <p>仍在施工内测中，请勿外传噢！</p>
+
+                <hr />
+                <h3>
+                    输入内容：
+                </h3>
+                <p>
+                    {{ result[-1] }}
+                </p>
+
+            </div>
         </div>
 
         <a href="/home" class="button">再来一次</a>
+
     </div>
     <div class="spacer"> </div>
 </div>
