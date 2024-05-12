@@ -18,7 +18,7 @@ def do(text):
     result = []
     #redisUse.recordResult(pred[0][1])
     for i in range(3):
-        result.append(f"{round(pred[i][2] * 100, 2)} % 的 {pred[i][0]} 成分")
+        result.append(f"{round(pred[i][2] * 100, 2)} % {pred[i][0]}")
         result.append(f"这位作者的参考作品有：{' '.join([f'《{work}》' for work in pred[i][3]])}")
     
     result.append(original)
