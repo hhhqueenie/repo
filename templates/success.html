@@ -11,7 +11,6 @@
 
             <hr />
 
-
             <div class="bigText">{{ result[0][1] }}</div> <!--English name-->
             <div class="mediumText">{{ result[0][0] }}</div><!--CN name-->
 
@@ -44,19 +43,25 @@
                 <p>
                     或者{{result[2][0]}}({{'%0.2f'| format(result[2][2] * 100|float)}}%)
                 </p>
+                <hr />
+
+                <h3>
+                    输入内容（标粉的句子最有{{ result[0][0] }}的特点）：
+                </h3>
+                <p>
+                    {% for sentence_range, author_scores in result[-1].items() %}
+                        {% set highest_author = author_scores|highest_scoring_author %}
+                        {% if highest_author == result[0][0] %}
+                            <span style="color: #E297A4;">{{ result[-2][sentence_range[0]:sentence_range[1]] }}</span>
+                        {% else %}
+                            <span style="color: #000000;">{{ result[-2][sentence_range[0]:sentence_range[1]] }}</span>
+                        {% endif %}
+                    {% endfor %}
+                </p>
 
                 <hr />
 
                 <p>仍在施工内测中，请勿外传噢！</p>
-
-                <hr />
-                <h3>
-                    有效的输入内容：
-                </h3>
-                <p>
-                    {{ result[-2] }}
-                </p>
-
             </div>
         </div>
 

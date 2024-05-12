@@ -29,7 +29,6 @@ def do(text):
 
     pred.append(valid_text)
     pred.append(exp)
-    print(exp)
 
     # print("user input as follows: ")
     # print(redisUse.getAllUserInputs())

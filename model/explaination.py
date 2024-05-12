@@ -66,8 +66,5 @@ class Explainer():
                     result[(start_pos, end_pos)].append((author, score))
                 except KeyError:
                     result[(start_pos, end_pos)] = [(author, score)]
-        
-        chinese_pattern = re.compile('[^\u4e00-\u9fff]+')
-        text = chinese_pattern.sub('', text)
-        
+        result = dict(sorted(result.items(), key=lambda item: item[0][0])) # sort by sentence position
         return text, result

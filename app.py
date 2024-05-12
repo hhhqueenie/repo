@@ -52,6 +52,11 @@ def querydata():
         #     result = getAllFrenquency()
         #     return render_template("userInput.html", resType="统计", myList=result)
     return render_template("query.html", form=f)    
+
+@app.template_filter('highest_scoring_author')
+def highest_scoring_author_filter(author_scores):
+    return max(author_scores, key=lambda x: x[1])[0]
+
 # @app.route("/trick")
 # def trick():
 #     return render_template("trick.html")
